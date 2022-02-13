@@ -101,6 +101,7 @@ router.delete('/:id', (req, res) => {
   .then(dbCatData => {
     if(!dbCatData){
       res.status(404).json({message: 'Category was not found with your request'})
+      return;
     }
     res.json(dbCatData);
   })
